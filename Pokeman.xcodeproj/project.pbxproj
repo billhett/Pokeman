@@ -13,6 +13,7 @@
 		A95CEF97205C11B3007AA797 /* Pokeman.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A95CEF95205C11B3007AA797 /* Pokeman.xcdatamodeld */; };
 		A95CEF99205C11B3007AA797 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A95CEF98205C11B3007AA797 /* Assets.xcassets */; };
 		A95CEF9C205C11B3007AA797 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95CEF9A205C11B3007AA797 /* LaunchScreen.storyboard */; };
+		A95CEFA5205C1259007AA797 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95CEFA4205C1259007AA797 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A95CEF98205C11B3007AA797 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A95CEF9B205C11B3007AA797 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A95CEF9D205C11B3007AA797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A95CEFA4205C1259007AA797 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A95CEFA5205C1259007AA797 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +45,7 @@
 			children = (
 				A95CEF8D205C11B3007AA797 /* Pokeman */,
 				A95CEF8C205C11B3007AA797 /* Products */,
+				A95CEFA3205C1259007AA797 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +69,14 @@
 				A95CEF95205C11B3007AA797 /* Pokeman.xcdatamodeld */,
 			);
 			path = Pokeman;
+			sourceTree = "<group>";
+		};
+		A95CEFA3205C1259007AA797 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A95CEFA4205C1259007AA797 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
