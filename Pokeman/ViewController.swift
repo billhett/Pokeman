@@ -22,9 +22,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             print("Ready to go!")
             mapView.showsUserLocation = true
             manager.startUpdatingLocation()
+            
+            Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { (timer) in
+                //spawn Pokemon every 5 seconds
+                print("timer")
+                
+                if let coord = self.manager.location?.coordinate {
+                    let anno = MKPointAnnotation()
+                    //let region = MKCoordinateRegionMakeWithDistance(coord, 200,200)
+                    //self.mapView.setRegion(region, animated: true)
+                    anno.coordinate = coord
+                    let randoLat = (Double(arc4random_uniform(200))-100)/50000.0
+                    let randoLon = (Double(arc4random_uniform(200)) - 100)/50000
+                    anno.coordinate.latitude += randoLat
+                    anno.coordinate.longitude += randoLon
+                    self.mapView.addAnnotation(anno)
+                }
+                
+            })
         } else {
             manager.requestWhenInUseAuthorization()
         }
+        
         
     }
     
