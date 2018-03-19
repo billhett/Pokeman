@@ -10,12 +10,12 @@ import UIKit
 import CoreData
 
 func addAllPokemon() {
-//    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//
-//    let pokemon = Pokemon(context: context)
-//    pokemon.name = "Mew"
-//    pokemon.imageName = "mew"
-//    (UIApplication.shared.delegate as! AppDelegate).saveContext()
+    //    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    //
+    //    let pokemon = Pokemon(context: context)
+    //    pokemon.name = "Mew"
+    //    pokemon.imageName = "mew"
+    //    (UIApplication.shared.delegate as! AppDelegate).saveContext()
     createPokemon(name: "Mew", imageName: "112-mew")
     createPokemon(name: "Meowth", imageName: "125-meowth")
     createPokemon(name: "Pikachu", imageName: "051-pikachu-2")
@@ -37,4 +37,48 @@ func createPokemon(name: String, imageName: String) {
     let pokemon = Pokemon(context: context)
     pokemon.name = name
     pokemon.imageName = imageName
+}
+
+func getAllPokemon() -> [Pokemon] {
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    do {
+        let pokemons = try context.fetch(Pokemon.fetchRequest()) as! [Pokemon]
+        
+        if pokemons.count == 0 {
+            addAllPokemon()
+            return getAllPokemon()
+        }
+        
+        return pokemons
+    } catch {
+        print("error getting pokemons: \(error)")
+    }
+    return []
+}
+
+func getAllCaughtPokemons() -> [Pokemon] {
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let fetchRequest = Pokemon.fetchRequest() as NSFetchRequest<Pokemon>
+    fetchRequest.predicate = NSPredicate(format: "caught == %@", true as CVarArg)
+    do {
+        let pokemons = try context.fetch(fetchRequest)
+        return pokemons
+    } catch {
+        print("error getting caught Pokemons: \(error)")
+    }
+    
+    return []
+}
+
+func getAllUncaughtPokemons() -> [Pokemon]  {
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let fetchRequest = Pokemon.fetchRequest() as NSFetchRequest<Pokemon>
+    fetchRequest.predicate = NSPredicate(format: "caught == %@", false as CVarArg)
+    do {
+        let pokemons = try context.fetch(fetchRequest)
+        return pokemons
+    } catch {
+        print("error getting caught Pokemons: \(error)")
+    }
+    return []
 }

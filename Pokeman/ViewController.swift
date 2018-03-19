@@ -9,17 +9,22 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     var updateCount = 0
     var manager = CLLocationManager()
+    var pokemons : [Pokemon] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pokemons = getAllPokemon()
+        
         manager.delegate = self
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             print("Ready to go!")
+            mapView.delegate = self
             mapView.showsUserLocation = true
             manager.startUpdatingLocation()
             
@@ -45,6 +50,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            
+            //return nil   does blue dot
+            let annoView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
+            annoView.image = UIImage(named: "122-player")
+            var frame = annoView.frame
+            frame.size.height = 50
+            frame.size.width = 50
+            annoView.frame = frame
+            return annoView
+        }
+        let annoView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        annoView.image = UIImage(named: "112-mew")
+        var frame = annoView.frame
+        frame.size.height = 50
+        frame.size.width = 50
+        annoView.frame = frame
+        return annoView
     }
     
     override func didReceiveMemoryWarning() {

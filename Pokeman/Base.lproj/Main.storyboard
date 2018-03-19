@@ -87,13 +87,26 @@
                                     <action selector="mapTapped:" destination="gVL-ZG-MhL" eventType="touchUpInside" id="yOr-a4-39D"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6MS-9l-BGv">
+                                <rect key="frame" x="325" y="527" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6LS-3D-4Pc"/>
+                                    <constraint firstAttribute="width" constant="50" id="eWk-aY-0bi"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="caughtTapped:" destination="gVL-ZG-MhL" eventType="touchUpInside" id="rEs-Gs-2Ma"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hd7-OR-IRz" firstAttribute="bottom" secondItem="H8v-ZC-3Fd" secondAttribute="bottom" constant="20" id="8Ac-dQ-do3"/>
+                            <constraint firstItem="6MS-9l-BGv" firstAttribute="trailing" secondItem="hd7-OR-IRz" secondAttribute="trailing" id="DDH-Vt-2PC"/>
                             <constraint firstItem="hd7-OR-IRz" firstAttribute="trailing" secondItem="df0-1w-zcr" secondAttribute="trailing" id="G2y-V4-dVF"/>
                             <constraint firstItem="H8v-ZC-3Fd" firstAttribute="centerX" secondItem="ifm-fe-Rfs" secondAttribute="centerX" id="S7Z-lf-fsU"/>
                             <constraint firstItem="hd7-OR-IRz" firstAttribute="bottom" secondItem="df0-1w-zcr" secondAttribute="bottom" id="huL-Ns-6cd"/>
+                            <constraint firstItem="H8v-ZC-3Fd" firstAttribute="top" secondItem="6MS-9l-BGv" secondAttribute="bottom" constant="20" id="lbL-N3-Qfo"/>
                             <constraint firstItem="df0-1w-zcr" firstAttribute="leading" secondItem="hd7-OR-IRz" secondAttribute="leading" id="qYr-H0-Mbc"/>
                             <constraint firstItem="df0-1w-zcr" firstAttribute="top" secondItem="hd7-OR-IRz" secondAttribute="top" id="v4r-Sx-Ijl"/>
                         </constraints>
