@@ -16,6 +16,7 @@
 		A95CEFA5205C1259007AA797 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95CEFA4205C1259007AA797 /* MapKit.framework */; };
 		A95CF03620601E9F007AA797 /* PokedexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95CF03520601E9F007AA797 /* PokedexViewController.swift */; };
 		A95CF03820601FCB007AA797 /* CoreDataHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95CF03720601FCB007AA797 /* CoreDataHelp.swift */; };
+		A95CF03A2061678B007AA797 /* PokeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95CF0392061678B007AA797 /* PokeAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A95CEFA4205C1259007AA797 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A95CF03520601E9F007AA797 /* PokedexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexViewController.swift; sourceTree = "<group>"; };
 		A95CF03720601FCB007AA797 /* CoreDataHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelp.swift; sourceTree = "<group>"; };
+		A95CF0392061678B007AA797 /* PokeAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				A95CEF8E205C11B3007AA797 /* AppDelegate.swift */,
 				A95CEF90205C11B3007AA797 /* ViewController.swift */,
 				A95CF03520601E9F007AA797 /* PokedexViewController.swift */,
+				A95CF0392061678B007AA797 /* PokeAnnotation.swift */,
 				A95CF03720601FCB007AA797 /* CoreDataHelp.swift */,
 				A95CEF92205C11B3007AA797 /* Main.storyboard */,
 				A95CEF98205C11B3007AA797 /* Assets.xcassets */,
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A95CEF91205C11B3007AA797 /* ViewController.swift in Sources */,
+				A95CF03A2061678B007AA797 /* PokeAnnotation.swift in Sources */,
 				A95CF03620601E9F007AA797 /* PokedexViewController.swift in Sources */,
 				A95CEF8F205C11B3007AA797 /* AppDelegate.swift in Sources */,
 				A95CF03820601FCB007AA797 /* CoreDataHelp.swift in Sources */,

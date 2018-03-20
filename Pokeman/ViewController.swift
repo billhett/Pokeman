@@ -33,7 +33,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 print("timer")
                 
                 if let coord = self.manager.location?.coordinate {
-                    let anno = MKPointAnnotation()
+                    let pokemon = self.pokemons[Int(arc4random_uniform(UInt32(self.pokemons.count)))]
+                    let anno = PokeAnnotation(coord: coord, pokemon: pokemon)
                     //let region = MKCoordinateRegionMakeWithDistance(coord, 200,200)
                     //self.mapView.setRegion(region, animated: true)
                     anno.coordinate = coord
@@ -65,7 +66,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             return annoView
         }
         let annoView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
-        annoView.image = UIImage(named: "112-mew")
+        let pokemon = (annotation as! PokeAnnotation).pokemon
+        
+        annoView.image = UIImage(named: pokemon.imageName!)
         var frame = annoView.frame
         frame.size.height = 50
         frame.size.width = 50
